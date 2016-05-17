@@ -16,33 +16,31 @@
 	border-spacing: 10px;	
 	/*border: 1px solid red;*/
 }
-.flip {
+.flip3D {
 	height: 60px;
 	width: 60px;
 	margin: 5px 10px;
 	float: left;
 	border-radius: 5px;
 }
-.flip > .front {
-	position: absolute;
+.front {
 	transform: perspective(600px) rotateY(0deg);
 	height: 60px;
 	width: 60px;
 	border: 3px solid white;
 	border-radius: 5px;
 	background: #133E49;
-	backface-visibility: hidden;
+	/*backface-visibility: hidden;*/
 	transition: transform .5s linear 0s;
 }
-.flip > .back {
-	position: absolute;
+.back {
 	transform: perspective(600px) rotateY(180deg);
 	height: 60px;
 	width: 60px;
 	border: 3px solid white;
 	border-radius: 5px;
 	background: #357E90;
-	backface-visibility: hidden;
+	/*backface-visibility: hidden;*/
 	transition: transform .5s linear 0s;
 }
 
