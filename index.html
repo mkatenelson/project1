@@ -5,45 +5,100 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
 	<link href='https://fonts.googleapis.com/css?family=Merriweather+Sans:700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="style2.css">
-	<link rel="stylesheet" href="style/style.css">
+	<link rel="stylesheet" href="style/style.css" href="animate.min.css">
 	<script src = "script/script.js"async></script>
 </head>
 
 <body>
 	<div class="frame">
+
 		<h1>Test Your Memory</h1>
 		<br>
 		<p>Click on a box to start the game and uncover matching pairs.</p>
 		<br>
 	
 		<table class="board">
+
 			<tr>
-				<td class="tile" id="a1"></td>
-				<td class="tile" id="a2"></td>
-				<td class="tile" id="a3"></td>
-				<td class="tile" id="a4"></td>
+				<td class="flip" id="a1">
+					<div class="back">Tile a1 - Back</div>
+					<div class="front">Tile a1 - Front</div>
+				</td>
+				<td class="flip" id="a2">
+					<div class="back">Tile a2 - Back</div>
+					<div class="front">Tile a2 - Front</div>
+				</td>
+				<td class="flip" id="a3">
+					<div class="back">Tile a3 - Back</div>
+					<div class="front">Tile a3 - Front</div>
+				</td>
+				<td class="flip" id="a4">
+					<div class="back">Tile a4 - Back</div>
+					<div class="front">Tile a4 - Front</div>
+				</td>
 			</tr>
+
 			<tr>
-				<td class="tile" id="b1"></td>
-				<td class="tile" id="b2"></td>
-				<td class="tile" id="b3"></td>
-				<td class="tile" id="b4"></td>
+				<td class="flip" id="b1">
+					<div class="back">Tile b1 - Back</div>
+					<div class="front">Tile b1 - Front</div>
+				</td>
+				<td class="flip" id="b2">
+					<div class="back">Tile b2 - Back</div>
+					<div class="front">Tile b2 - Front</div>
+				</td>
+				<td class="flip" id="b3">
+					<div class="back">Tile b3 - Back</div>
+					<div class="front">Tile b3 - Front</div>
+				</td>
+				<td class="flip" id="b4">
+					<div class="back">Tile b4 - Back</div>
+					<div class="front">Tile b4 - Front</div>
+				</td>
 			</tr>
+
 			<tr>
-				<td class="tile" id="c1"></td>
-				<td class="tile" id="c2"></td>
-				<td class="tile" id="c3"></td>
-				<td class="tile" id="c4"></td>
+				<td class="flip" id="c1" >
+					<div class="back">Tile c1 - Back</div>
+					<div class="front">Tile c1 - Front</div>
+				</td>
+				<td class="flip" id="c2">
+					<div class="back">Tile c2 - Back</div>
+					<div class="front">Tile c2 - Front</div>
+				</td>
+				<td class="flip" id="c3">
+					<div class="back">Tile c3 - Back</div>
+					<div class="front">Tile c3 - Front</div>
+				</td>
+				<td class="flip" id="c4">
+					<div class="back">Tile c4 - Back</div>
+					<div class="front">Tile c4 - Front</div>
+				</td>
 			</tr>
+
 			<tr>
-				<td class="tile" id="d1"></td>
-				<td class="tile" id="d2"></td>
-				<td class="tile" id="d3"></td>
-				<td class="tile" id="d4"></td>
+				<td class="flip" id="d1">
+					<div class="back">Tile d1 - Back</div>
+					<div class="front">Tile d1 - Front</div>
+				</td>
+				<td class="flip" id="d2">
+					<div class="back">Tile d2 - Back</div>
+					<div class="front">Tile d2 - Front</div>
+				</td>
+				<td class="flip" id="d3">
+					<div class="back">Tile d3 - Back</div>
+					<div class="front">Tile d3 - Front</div>
+				</td>
+				<td class="flip" id="d4">
+					<div class="back">Tile d4 - Back</div>
+					<div class="front">Tile d4 - Front</div>
+				</td>
 			</tr>
+
 		</table>
 
 		<button id="reset">RESET</button>
+
 	</div>
 </body>
 
