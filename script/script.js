@@ -1,4 +1,12 @@
+function toggleClass(tile) {
+	if (tile.className === "front") {
+		tile.className = "back";
+	}
+	else {
+		tile.className = "front";
+	}
 
+}
 
 function wasFlipped() {
 	var testClicks = document.getElementsByClassName("flip");
