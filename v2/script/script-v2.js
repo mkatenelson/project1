@@ -1,51 +1,70 @@
-// Toggles tiles between front and back
-function toggleClass(tile) {
-	if (tile.className == "front") {
-		tile.className = "back";
-	}
-	else {
-		tile.className = "front";
-	}
-}
+var tileFlippedCounter = 0;
+
 ////////////////////////////
-
-
-function twoFlipped() {
-	return $(".back").length == 2;
+// CALLBACKS //
+function checkMatch() {
+	// console.log("hello from check match");
+	if ( $(".faceUp:eq(0)").text() == $(".faceUp:eq(1)").text() ){
+		console.log("There is a match");
+		markMatch(); 
+	} else {
+		console.log("no match");
+		// set timeout
+		flipBack();
+	}
+	tileFlippedCounter = 0;
 }
-
-function matchFound() {
-	return $(".back:eq(0)").text() == $(".back:eq(1)").text()
-;}
 
 function markMatch() {
-	$(".back").each(function() {
-		$(this).addClass("matched").removeClass("back").off("click");
-	});
+	setTimeout(function(){
+		$(".faceUp").each(function() {
+			$(this).addClass("matched").removeClass("faceUp").off("click");
+		});
+	}, 1000);
 }
 
 function flipBack() {
-	$(".back").each(function() {
-		$(this).addClass("front").removeClass("back");
-	});
+	setTimeout(function(){
+		$(".faceUp").each(function() {
+			// flip back to front
+			reveal(this);
+		});
+	}, 1200);
 }
 
+//////////////////////////////////
+
+// Flips tiles between front and back
+function reveal(tile) {
+	console.log(tile);
+	if (tile.className == "faceDown") {
+		tile.className = "faceUp";
+		tileFlippedCounter += 1;
+		console.log(tileFlippedCounter);
+		if (tileFlippedCounter == 2) {
+			checkMatch();
+		} 
+	}
+	else {
+		tile.className = "faceDown";
+	}
+}
 
 // LOOP //
 $("td").on("click", function() {
-	if ($(".back").length == 2) {
-		return false;
-	}
-	$(this).removeClass("front").addClass("back");
+	// console.log(this.id);
+	reveal(this);
+});
 
-	if (twoFlipped()) {
-		if (matchFound()) {
-			markMatch();
-		}
-	}
-	else {
-		flipBack();
-	}
+
+
+///////////////////////////////
+// RESET //
+$("#reset").click(function() {
+	setTimeout(function(){
+		$("td").addClass("faceDown").removeClass("faceUp");
+	}, 600);
+	tileFlippedCounter = 0;
 });
 
 
@@ -58,17 +77,3 @@ $("td").on("click", function() {
 
 
 
-
-
-///////////////////////////
-
-//function wasFlipped() {
-	//var testClicks = document.getElementsByClassName("flip");
-	//for(var i = 0; i < testClicks.length; i++){
-		//console.log("element found"); // returns 16 elements
-		// testClicks.addEventListener
-		// 
-		// if <td> with class .flip has been clicked
-		// remove class .flip and add class .stayFlip
-	//}
-//}

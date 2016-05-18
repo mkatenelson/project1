@@ -1,13 +1,13 @@
 /*//// CLASSES ////*/
 
-.frame {
+/*.frame {
 	position: static;
 	align: center;
 	/*border: 1px solid red;*/
 	width: 600px;
 	margin: 0 auto;
 }
-.board {
+/*.board {
 	height: 360px;
 	width: 380px;
 	align: center;
@@ -15,8 +15,8 @@
 	margin: 0 auto;
 	border-spacing: 10px;	
 	/*border: 1px solid red;*/
-}
-.faceDown {
+/*}
+/*.front {
 	transform: perspective(600px) rotateY(0deg);
 	height: 60px;
 	width: 60px;
@@ -25,8 +25,8 @@
 	background: #133E49;
 	/*backface-visibility: hidden;*/
 	transition: transform .5s linear 0s;
-}
-.faceUp {
+/*}
+.back {
 	transform: perspective(600px) rotateY(180deg);
 	height: 60px;
 	width: 60px;
@@ -35,40 +35,13 @@
 	background: #357E90;
 	/*backface-visibility: hidden;*/
 	transition: transform .5s linear 0s;
-	font-family: "Roboto";
-	color: white;
-	font-size: 32px;
-	text-align: center;
 }
-.matched {
-	transform: perspective(600px) rotateY(180deg);
-	height: 60px;
-	width: 60px;
-	border: 3px solid white;
-	border-radius: 5px;
-	background: #031F26;
-	transition: transform .5s linear 0s;
-	color: #031F26;
-}
-/*.flip3D {
-	height: 60px;
-	width: 60px;
-	margin: 5px 10px;
-	float: left;
-	border-radius: 5px;
-}*/
-/*.flip:active > .front {
-	transform: perspective(600px) rotateY(-180deg);
-}	
-.flip:active > .back {
-	transform: perspective(600px) rotateY(0deg);
-}*/
 
 
 /*//// IDs ////*/
 
 /* Reset Button */
-#reset {
+/*#reset {
 	position: relative;
 	align: left;
 	font-family:"Merriweather Sans";
@@ -85,17 +58,14 @@
 
 /*//// ELEMENTS ////*/
 body {
-	background: #031F26;
+	background: #1A062F;
 }
-td{
-	position: static;
+td {
 	height: 60px;
 	width: 60px;
 	margin: 5px 10px;
 	float: left;
 	border-radius: 5px;
-	color: #133E49;
-
 }
 h1{
 	font-family: "Merriweather Sans";
@@ -110,5 +80,5 @@ p{
 	color: white;
 	margin: -10px 10px 20px 10px;
 	text-align: center;
-}
+} */
 
