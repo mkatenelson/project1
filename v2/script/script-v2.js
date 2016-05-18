@@ -4,12 +4,11 @@ var tileFlippedCounter = 0;
 // CALLBACKS //
 function checkMatch() {
 	// console.log("hello from check match");
-	if ( $(".faceUp:eq(0)").text() == $(".faceUp:eq(1)").text() ){
-		console.log("There is a match");
+	if ( $(".faceUp:eq(0)").text() == $(".faceUp:eq(1)").text() ) {
+		console.log("There is a match.");
 		markMatch(); 
 	} else {
-		console.log("no match");
-		// set timeout
+		console.log("No match.");
 		flipBack();
 	}
 	tileFlippedCounter = 0;
@@ -18,13 +17,17 @@ function checkMatch() {
 function markMatch() {
 	setTimeout(function(){
 		$(".faceUp").each(function() {
-			$(this).addClass("matched").removeClass("faceUp").off("click");
+			$(this).addClass("matched").removeClass("faceUp").removeAttr("onclick");
 		});
 	}, 1000);
 }
 
+function gameOver() {
+  return ($(".matched").length == 16);
+}
+
 function flipBack() {
-	setTimeout(function(){
+	setTimeout(function() {
 		$(".faceUp").each(function() {
 			// flip back to front
 			reveal(this);
@@ -61,8 +64,8 @@ $("td").on("click", function() {
 ///////////////////////////////
 // RESET //
 $("#reset").click(function() {
-	setTimeout(function(){
-		$("td").addClass("faceDown").removeClass("faceUp");
+	setTimeout(function() {
+		$("td").addClass("faceDown").removeClass("faceUp").setAttr("onclick");
 	}, 600);
 	tileFlippedCounter = 0;
 });
