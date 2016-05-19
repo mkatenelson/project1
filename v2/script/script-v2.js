@@ -35,6 +35,10 @@ function flipBack() {
 	}, 1200);
 }
 
+function gameOver(){
+  	return ($(".matched").length == 18);
+}
+
 //////////////////////////////////
 
 // Flips tiles between front and back
@@ -45,19 +49,19 @@ function reveal(tile) {
 		tileFlippedCounter += 1;
 		console.log(tileFlippedCounter);
 		if (tileFlippedCounter == 2) {
-			checkMatch();
+			checkMatch(); 
+			if (gameOver()) {
+				alert("Game over! Click RESET to begin a new game.");
+			}
 		} 
-	}
+	}			
 	else {
 		tile.className = "faceDown";
 	}
 }
 
-// LOOP //
-//$("td").on("click", function() {
-	// console.log(this.id);
-	//reveal(this);
-//});
+
+
 
 
 
