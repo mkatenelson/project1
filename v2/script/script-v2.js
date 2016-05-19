@@ -1,4 +1,7 @@
+
+
 var tileFlippedCounter = 0;
+//var square = getElementsByTag("td");
 
 ////////////////////////////
 // CALLBACKS //
@@ -22,9 +25,6 @@ function markMatch() {
 	}, 1000);
 }
 
-function gameOver() {
-  return ($(".matched").length == 16);
-}
 
 function flipBack() {
 	setTimeout(function() {
@@ -54,29 +54,19 @@ function reveal(tile) {
 }
 
 // LOOP //
-$("td").on("click", function() {
+//$("td").on("click", function() {
 	// console.log(this.id);
-	reveal(this);
-});
+	//reveal(this);
+//});
 
 
 
 ///////////////////////////////
 // RESET //
-$("#reset").click(function() {
-	setTimeout(function() {
-		$("td").addClass("faceDown").removeClass("faceUp").setAttr("onclick");
-	}, 600);
-	tileFlippedCounter = 0;
+
+$(document).on('click', '#reset', function(){
+	location.reload();
 });
-
-
-
-
-
-
-
-
 
 
 
