@@ -8,7 +8,7 @@
 	margin: 0 auto;
 }
 .board {
-	height: 460px;
+	height: 420px;
 	width: 520px;
 	align: center;
 	/*border-collapse: collapse;*/
@@ -16,6 +16,15 @@
 	border-spacing: 10px;	
 	/*border: 1px solid red;*/
 }
+/*.square {
+	position: static;
+	height: 70px;
+	width: 70px;
+	margin: 5px 10px;
+	float: left;
+	border-radius: 5px;
+	color: #133E49;
+}*/
 .faceDown {
 	transform: perspective(600px) rotateY(0deg);
 	height: 70px;
@@ -23,7 +32,7 @@
 	border: 3px solid white;
 	border-radius: 5px;
 	background: #133E49;
-	/*backface-visibility: hidden;*/
+	color: #133E49;
 	transition: transform .5s linear 0s;
 }
 .faceUp {
@@ -33,7 +42,6 @@
 	border: 3px solid white;
 	border-radius: 5px;
 	background: #357E90;
-	/*backface-visibility: hidden;*/
 	transition: transform .5s linear 0s;
 	font-family: "Roboto";
 	color: white;
@@ -50,19 +58,6 @@
 	transition: transform .5s linear 0s;
 	color: #031F26;
 }
-/*.flip3D {
-	height: 60px;
-	width: 60px;
-	margin: 5px 10px;
-	float: left;
-	border-radius: 5px;
-}*/
-/*.flip:active > .front {
-	transform: perspective(600px) rotateY(-180deg);
-}	
-.flip:active > .back {
-	transform: perspective(600px) rotateY(0deg);
-}*/
 
 
 /*//// IDs ////*/
@@ -77,7 +72,7 @@
 	width: 176px;
 	background: white;
 	padding: 2px 0;
-	margin: 5px 110px;
+	margin: 15px 110px;
 	border: 5px solid white;
 	border-radius: 5px;
 }
@@ -87,7 +82,7 @@
 body {
 	background: #031F26;
 }
-td{
+/*td{
 	position: static;
 	height: 70px;
 	width: 70px;
@@ -96,7 +91,7 @@ td{
 	border-radius: 5px;
 	color: #133E49;
 
-}
+}*/
 h1{
 	font-family: "Merriweather Sans";
 	font-size: 32px;
