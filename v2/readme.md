@@ -1,13 +1,9 @@
 #Memory Game
 
 Technologies Used:
-
 - HTML
-
 - CSS
-
 - JavaScript
-
   * jQuery
   
   
@@ -15,18 +11,12 @@ Technologies Used:
 
 
 Additional planned optional features:
-
 - Timer
-
 - 2 player game
-
 - Progress bar
-
 - Track correct matches vs. turns played
-
 - Increase difficulty by adding more images or making images more similar as games progress
 
 
 How to Contribute:
-
 Fork project and make a pull request with contributions.
