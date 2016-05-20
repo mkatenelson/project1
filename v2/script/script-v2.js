@@ -1,15 +1,12 @@
 window.onload = shuffleTiles;
 
-
 var tempTile, tempText;
-// COUNTER //
-var tileFlippedCounter = 0;
+var tileFlippedCounter = 0; // COUNTER
 
 
 ////////////////////////////
 // CALLBACKS //
 function checkMatch() {
-	// console.log("hello from check match");
 	if ( $(".faceUp:eq(0)").text() == $(".faceUp:eq(1)").text() ) {
 		console.log("There is a match.");
 		markMatch(); 
@@ -79,13 +76,9 @@ function shuffleTiles(){
 
 	for(var i = 0; i <= testArray.length; i++){
 		var rando = Math.floor(Math.random() * 21);
-		tempTile = $("#a" + i); // replace i with randomly generated number in this line only
+		tempTile = $("#a" + i); // replace i with randomly generated number in this line
 		tempText = testArray[i];
 		$(tempTile).text(tempText);
-		//		console.log(tempTile);
-		//		tilesArray[i].text = testArray[i];
-		// $(tilesArray[0]).text(testArray[0]);
-		// $(tilesArray[i]).html(testArray[i]);
 	}
 }
 
