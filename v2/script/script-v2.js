@@ -25,7 +25,7 @@ function markMatch() {
 		$(".faceUp").each(function() {
 			$(this).addClass("matched").removeClass("faceUp").removeAttr("onclick");
 		});
-	}, 600);
+	}, 1000);
 }
 
 
@@ -35,7 +35,7 @@ function flipBack() {
 			// flip back to front
 			reveal(this);
 		});
-	}, 600);
+	}, 1000);
 }
 
 function gameOver(){
@@ -47,20 +47,24 @@ function gameOver(){
 // Flips tiles between front and back
 function reveal(tile) {
 	console.log(tile);
-	if (tile.className == "faceDown") {
-		tile.className = "faceUp";
-		tileFlippedCounter += 1;
-		console.log(tileFlippedCounter);
-		if (tileFlippedCounter == 2) {
-			checkMatch(); 
-			if (gameOver()) {
-				alert("Game over! Click RESET to begin a new game.");
-			}
-		} 
-	}			
-	else {
-		tile.className = "faceDown";
-	}
+	
+		if (tile.className == "faceDown") {
+			if ($(".faceUp").length < 2) {
+			tile.className = "faceUp";
+			tileFlippedCounter += 1;
+			console.log(tileFlippedCounter);
+			if (tileFlippedCounter == 2) {
+				checkMatch(); 
+				if (gameOver()) {
+					alert("Good job! Click RESET to begin a new game.");
+				}
+			} 
+		}
+		}			
+		else {
+			tile.className = "faceDown";
+		}
+	
 }
 
 ///////////////////////////////
@@ -69,12 +73,14 @@ function reveal(tile) {
 function shuffleTiles(){
 	console.log("hello from shuffleTiles");
 	var testArray = ["!","@","#","$","%","^","&","*","(",")","!","@","#","$","%","^","&","*","(",")"];
+	console.log(testArray);
+	var shuffledArray = shuffle(testArray);
 
-	// generate a random number from 1 - 20
 
 	for(var i = 0; i <= testArray.length; i++){
-		 tempTile = $("#a" + i); // replace i with your randomly generated number in this line only
-		 tempText = testArray[i];
+		var rando = Math.floor(Math.random() * 21);
+		tempTile = $("#a" + i); // replace i with randomly generated number in this line only
+		tempText = testArray[i];
 		$(tempTile).text(tempText);
 		//		console.log(tempTile);
 		//		tilesArray[i].text = testArray[i];
@@ -83,53 +89,18 @@ function shuffleTiles(){
 	}
 }
 
-///// Example 1
-// var shuffleTiles = function() {
-//     var parent = $("#shuffle");
-//     var tds = parent.children();
-//     while (tds.length) {
-//         parent.append(tds.splice(Math.floor(Math.random() * tds.length), 1)[0]);
-//     }
-//     console.log("shuffle hears");
-// };
 
-////// Example 2
-// var squares = $(".square");
-// squares.remove();
-// squares = shuffle(squares);
-// squares.appendTo($(".board"));
-
-// function shuffleTiles(squares){
-//   var i = squares.length, j, tempi, tempj;
-//   if ( i === 0 ) return false;
-//   while ( --i ) {
-//     j = Math.floor( Math.random() * ( i + 1 ));
-//     tempi = squares[i];
-//     tempj = squares[j];
-//     squares[i] = tempj;
-//     squares[j] = tempi;
-//   }
-//   return squares;
-// }
-
-///// Example 3
-// Shuffle(testArray);
-
-// // jQuery to dump out new values to element with class of 'square'
-// var shuffleTiles = function() {
-//    for (var i=0;i<testArray.length;i++) {
-//       $(".square").append(testArray[i]);
-//    }
-// };
-
-////////////////////////
-// Create HTML in script
-// var square = $(document.createElement('td'));
-// var square = $('<table>');
-// var square = $('<tr>');
-// var square = $('<td>');
-
-
+function shuffle(a) {
+    var j, x, i;
+    for (i = a.length; i; i -= 1) {
+        j = Math.floor(Math.random() * i);
+        x = a[i - 1];
+        a[i - 1] = a[j];
+        a[j] = x;
+  }
+  console.log(a);
+  return a;
+}
 
 
 
