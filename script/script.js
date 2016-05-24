@@ -76,7 +76,7 @@ function shuffleTiles(){
 
 	for(var i = 0; i <= testArray.length; i++){
 		var rando = Math.floor(Math.random() * 21);
-		tempTile = $("#a" + i); // replace i with randomly generated number in this line
+		tempTile = $("#a" + i); 
 		tempText = testArray[i];
 		$(tempTile).text(tempText);
 	}
